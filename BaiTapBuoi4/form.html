@@ -10,8 +10,8 @@
 <body>
     <h1>FORM ĐĂNG KÝ TÀI KHOẢN</h1>
     <form action="https://api-gateway.f8.edu.vn/action_page.php" method="post" enctype="multipart/form-data">
-        <div>
-            <h2>Thông tin cơ bản</h2>
+        <fieldset>
+            <legend>Thông tin cơ bản</legend>
             <label for="staffId">Mã số học viên</label><br>
             <p>(Dùng readonly vì muốn hiển thị lên form nhưng không cho người dùng sữa chữa mã vì mã sinh tự động và vẫn
                 cần phải gửi dữ liệu lên sever)</p>
@@ -48,9 +48,9 @@
             <input type="text" id="zipcode" name="zipcode" placeholder="700000" maxlength="6" tabindex="10"><br>
 
 
-        </div>
-        <div>
-            <h2>Thông tin bổ sung</h2>
+        </fieldset>
+        <fieldset>
+            <legend>Thông tin bổ sung</legend>
             <label>Giới tính</label><br>
 
             <input type="radio" id="male" name="gender" value="Nam" required tabindex="11">
@@ -158,9 +158,9 @@
             <label for="cv">CV / Hồ sơ</label>
             <input type="file" name="cv" id="cv" accept=".pdf,.doc,.docx" tabindex="32">
 
-        </div>
-        <div>
-            <h2>Input đặc biệt</h2>
+        </fieldset>
+        <fieldset>
+            <legend>Input đặc biệt</legend>
 
             <label for="fav_color">Màu yêu thích</label>
             <input type="color" name="fav_color" id="fav_color" value="#ff6600" tabindex="33"><br><br>
@@ -193,11 +193,12 @@
 
             <label for="fav_lang">Ngôn ngữ lập trình yêu thích</label>
             <input type="text" name="fav_lang" id="fav_lang" placeholder="VD: Javascript, Python" tabindex="42">
-        </div>
-        <div>
-            <h2>Xác nhận & điều khoản</h2>
-            <label for="agree_term">Tôi đồng ý với điều khoản sử dụng</label>
-            <input type="checkbox" name="agree_term" id="agree_term" required tabindex="43"><br>
+        </fieldset>
+        <fieldset>
+            <legend>Xác nhận & điều khoản</legend>
+
+            <input type="checkbox" name="agree_term" id="agree_term" required tabindex="43">
+            <label for="agree_term">Tôi đồng ý với điều khoản sử dụng</label><br>
 
             <label for="subcribe">Nhận thông báo qua email</label>
             <input type="checkbox" name="subcribe" id="subcribe" tabindex="44"><br>
@@ -231,8 +232,7 @@
             <label hidden>Nguồn truy cập</label>
             <input type="hidden" name="utm_source" value="website">
 
-
-        </div>
+        </fieldset>
 
         <button type="submit" title="Nút gửi form" tabindex="47">Submit</button>
         <button type="reset" title="Xóa toàn bộ dữ liệu" tabindex="48">Nhập lại</button>
