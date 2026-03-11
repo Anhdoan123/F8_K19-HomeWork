@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <style>
+        .section {
+            color: forestgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>TEACHERS PAGE</h1>
+    <!--
+        Phan tu nay co: tag(h2) + class(.title) + id(#special)
+        h2 se an mau cua external css (theme.css) base.css va theme.css deu dung selector #special nen co cung do uu tien nhung theme.css duoc load sau 
+        Mau hien thi: aqua
+    -->
+    <h2 class="title" id="special">Danh sach giang vien</h2>
+    <!-- internal css đã override style của base.css vì có cùng độ ưu tiên khi đều dùng .section nhưng internal được viết sau -->
+    <h3 class="section">Giang vien HTML</h3>
+    <h3 class="section">Giang vien CSS</h3>
+    <h3 class="section">Giang vien Javascript</h3>
+    <h3 class="section">Giang vien React</h3>
+
+</body>
+
+</html>

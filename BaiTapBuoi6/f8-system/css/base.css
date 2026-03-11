@@ -1,0 +1,39 @@
+h1 {
+    color: brown;
+}
+
+h2 {
+    color: blueviolet;
+}
+
+h3 {
+    color: blue;
+}
+
+p {
+    color: cornflowerblue;
+}
+
+.title {
+    color: darkgoldenrod;
+}
+
+.section {
+    color: aquamarine;
+}
+
+.highlight {
+    color: chocolate;
+}
+
+.big {
+    color: seagreen;
+}
+
+#main {
+    color: darkolivegreen;
+}
+
+#special {
+    color: forestgreen;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/theme.css">
+    <style>
+        #main {
+            color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title" id="main">HOME PAGE</h1>
+    <h2 class="title">Gioi thieu he thong</h2>
+    <h3 class="section">Cac khoa hoc noi bat</h3>
+    <p>HTML</p>
+    <p>CSS</p>
+    <p>Javascript</p>
+    <p>Python</p>
+    <!-- h1 và h2 đều dùng .title nhưng không có màu giống nhau vì:
+    Đối với thẻ h1 nó được áp dụng nhiều selector như tag(h1), class(.title), id(#main) nhưng trong css id selector có độ ưu tiên cao hơn nên style của id sẽ được áp dụng cho h1
+    Đối với thẻ h2 chỉ dùng .title, ở đây base.css và theme.css đều gọi đến selector này nhưng theme.css đã override style của base.css vì nó được link sau
+    -->
+</body>
+
+</html>
