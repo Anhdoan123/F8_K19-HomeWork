@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        .container {
+            width: 100vw;
+            background-color: #eee;
+        }
+
+        .controlPanel {
+            width: 35%;
+            height: 950px;
+            background-color: #f5f5f5;
+            display: inline-block;
+            margin: 10px;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        .previewArea {
+            width: calc(65% - 55px);
+            height: calc(950px - 28px);
+            display: inline-block;
+            margin: 10px;
+            vertical-align: top;
+        }
+
+        .content {
+            height: 100%;
+            background-color: red;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .ctrTitle {
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        .ctrLabel, .tagSkills, .btnContact {
+            background-color: #ddd;
+            padding: 0.4em 0.8em;
+            margin: 0px 10px 10px 0px;
+            display: inline-block;
+            font-size: 1.1rem;
+        }
+
+        .tagSkills {
+            background-color: #f0f0f0;
+            margin-top: 10px;
+        }
+
+        .preTitle {
+            margin-bottom: 10px;
+        }
+
+        .hobbies {
+            padding: 0;
+        }
+
+        .hobbies li {
+            display: inline-block;
+
+        }
+
+        .hobbies li + li {
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        .btnContact {
+            color: white;
+            background-color: #1a1a1a;
+            text-decoration: none;
+            margin-top: 20px;
+            margin-right: 0px;
+        }
+
+        input:checked + label {
+            font-weight: bold;
+        }
+
+        .name {
+            line-height: 1.2em;
+        }
+
+        .job {
+            line-height: 1.5em;
+        }
+
+
+        .controlPanel:has(#light:checked) ~ .previewArea .content {
+            background-color: white;
+        }
+
+        .controlPanel:has(#gray:checked) ~ .previewArea .content {
+            background-color: lightgray;
+        }
+
+        .controlPanel:has(#yellow:checked) ~ .previewArea .content {
+            background-color: lightyellow;
+        }
+
+        .controlPanel:has(#blue:checked) ~ .previewArea .content {
+            background-color: lightblue;
+        }
+
+        .controlPanel:has(#pink:checked) ~ .previewArea .content {
+            background-color: pink;
+        }
+
+        .controlPanel:has(#smallName:checked) ~ .previewArea .content .name {
+            font-size: 2rem;
+        }
+
+        .controlPanel:has(#mediumName:checked) ~ .previewArea .content .name {
+            font-size: 2.4rem;
+        }
+
+        .controlPanel:has(#largeName:checked) ~ .previewArea .content .name {
+            font-size: 2.8rem;
+        }
+
+        .controlPanel:has(#normalName:checked) ~ .previewArea .content .name {
+            text-transform: capitalize;
+        }
+
+        .controlPanel:has(#uppercaseName:checked) ~ .previewArea .content .name {
+            text-transform: uppercase;
+        }
+
+        .controlPanel:has(#darkName:checked) ~ .previewArea .content .name {
+            color: black;
+        }
+
+        .controlPanel:has(#blueName:checked) ~ .previewArea .content .name {
+            color: blue;
+        }
+
+        .controlPanel:has(#greenName:checked) ~ .previewArea .content .name {
+            color: green;
+        }
+
+        .controlPanel:has(#redName:checked) ~ .previewArea .content .name {
+            color: red;
+        }
+
+        .controlPanel:has(#left:checked) ~ .previewArea .content {
+            text-align: left;
+        }
+
+        .controlPanel:has(#center:checked) ~ .previewArea .content {
+            text-align: center;
+        }
+
+        .controlPanel:has(#right:checked) ~ .previewArea .content {
+            text-align: right;
+        }
+
+        .controlPanel:has(#smallJob:checked) ~ .previewArea .content .job {
+            font-size: 1rem;
+        }
+
+        .controlPanel:has(#mediumJob:checked) ~ .previewArea .content .job {
+            font-size: 1.2rem;
+        }
+
+        .controlPanel:has(#largeJob:checked) ~ .previewArea .content .job {
+            font-size: 1.4rem;
+        }
+
+        .controlPanel:has(#tightJob:checked) ~ .previewArea .content .job {
+            letter-spacing: -0.03em;
+        }
+
+        .controlPanel:has(#normalJob:checked) ~ .previewArea .content .job {
+            letter-spacing: 0.02em;
+        }
+
+        .controlPanel:has(#wideJob:checked) ~ .previewArea .content .job {
+            letter-spacing: 0.18em;
+        }
+
+        .controlPanel:has(#descSmall:checked) ~ .previewArea .content .desc {
+            font-size: 0.9rem;
+        }
+
+        .controlPanel:has(#descMedium:checked) ~ .previewArea .content .desc {
+            font-size: 1.012rem;
+        }
+
+        .controlPanel:has(#descLarge:checked) ~ .previewArea .content .desc {
+            font-size: 1.125rem;
+        }
+
+        .controlPanel:has(#descLarge:checked) ~ .previewArea .content .desc {
+            font-size: 1.125rem;
+        }
+
+        .controlPanel:has(#tightDesc:checked) ~ .previewArea .content .desc {
+            line-height: 1.6rem;
+        }
+
+        .controlPanel:has(#normalDesc:checked) ~ .previewArea .content .desc {
+            line-height: 1.8rem;
+        }
+
+        .controlPanel:has(#looseDesc:checked) ~ .previewArea .content .desc {
+            line-height: 2rem;
+        }
+
+        .controlPanel:has(#btnDark:checked) ~ .previewArea .content .btnContact {
+            background-color: #1a1a1a;
+        }
+
+        .controlPanel:has(#btnBlue:checked) ~ .previewArea .content .btnContact {
+            background-color: blue;
+        }
+
+        .controlPanel:has(#btnLight:checked) ~ .previewArea .content .btnContact {
+            background-color: #f5f5f5;
+            color: black;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="controlPanel">
+            <p>Tùy chỉnh hồ sơ</p>
+            <p class="ctrTitle">1. Màu nền hồ sơ</p>
+            <input type="radio" name="backgroundColor" id="light" hidden="hidden" checked>
+            <label for="light" class="ctrLabel">Light</label>
+            <input type="radio" name="backgroundColor" id="gray" hidden="hidden">
+            <label for="gray" class="ctrLabel">Gray</label>
+            <input type="radio" name="backgroundColor" id="yellow" hidden="hidden">
+            <label for="yellow" class="ctrLabel">Yellow</label>
+            <input type="radio" name="backgroundColor" id="blue" hidden="hidden">
+            <label for="blue" class="ctrLabel">Blue</label>
+            <input type="radio" name="backgroundColor" id="pink" hidden="hidden">
+            <label for="pink" class="ctrLabel">Pink</label>
+
+            <p class="ctrTitle">2. Kích thước tên</p>
+            <input type="radio" name="nameSize" id="smallName" hidden="hidden">
+            <label for="smallName" class="ctrLabel">Small</label>
+            <input type="radio" name="nameSize" id="mediumName" hidden="hidden" checked>
+            <label for="mediumName" class="ctrLabel">Medium</label>
+            <input type="radio" name="nameSize" id="largeName" hidden="hidden">
+            <label for="largeName" class="ctrLabel">Large</label>
+
+            <p class="ctrTitle">3. Kiểu chữ tên</p>
+            <input type="radio" name="typeName" id="normalName" hidden="hidden" checked>
+            <label for="normalName" class="ctrLabel">Normal</label>
+            <input type="radio" name="typeName" id="uppercaseName" hidden="hidden">
+            <label for="uppercaseName" class="ctrLabel">Uppercase</label>
+
+            <p class="ctrTitle">4. Màu chữ tên</p>
+            <input type="radio" name="nameColor" id="darkName" hidden="hidden" checked>
+            <label for="darkName" class="ctrLabel">Dark</label>
+            <input type="radio" name="nameColor" id="blueName" hidden="hidden">
+            <label for="blueName" class="ctrLabel">Blue</label>
+            <input type="radio" name="nameColor" id="greenName" hidden="hidden">
+            <label for="greenName" class="ctrLabel">Green</label>
+            <input type="radio" name="nameColor" id="redName" hidden="hidden">
+            <label for="redName" class="ctrLabel">Red</label>
+
+            <p class="ctrTitle">5. Căn lề hồ sơ</p>
+            <input type="radio" name="align" id="left" hidden="hidden">
+            <label for="left" class="ctrLabel">Left</label>
+            <input type="radio" name="align" id="center" hidden="hidden" checked>
+            <label for="center" class="ctrLabel">Center</label>
+            <input type="radio" name="align" id="right" hidden="hidden">
+            <label for="right" class="ctrLabel">Right</label>
+
+            <p class="ctrTitle">6. Kích thước nghề nghiệp</p>
+            <input type="radio" name="jobSize" id="smallJob" hidden="hidden">
+            <label for="smallJob" class="ctrLabel">Small</label>
+            <input type="radio" name="jobSize" id="mediumJob" hidden="hidden" checked>
+            <label for="mediumJob" class="ctrLabel">Medium</label>
+            <input type="radio" name="jobSize" id="largeJob" hidden="hidden">
+            <label for="largeJob" class="ctrLabel">Large</label>
+
+            <p class="ctrTitle">7. Khoảng cách chữ nghề nghiệp</p>
+            <input type="radio" name="letterSpacing" id="tightJob" hidden="hidden">
+            <label for="tightJob" class="ctrLabel">Tight</label>
+            <input type="radio" name="letterSpacing" id="normalJob" hidden="hidden" checked>
+            <label for="normalJob" class="ctrLabel">Normal</label>
+            <input type="radio" name="letterSpacing" id="wideJob" hidden="hidden">
+            <label for="wideJob" class="ctrLabel">Wide</label>
+
+            <p class="ctrTitle">8. Kích thước mô tả</p>
+            <input type="radio" name="descSize" id="descSmall" hidden="hidden">
+            <label for="descSmall" class="ctrLabel">Small</label>
+            <input type="radio" name="descSize" id="descMedium" hidden="hidden" checked>
+            <label for="descMedium" class="ctrLabel">Medium</label>
+            <input type="radio" name="descSize" id="descLarge" hidden="hidden">
+            <label for="descLarge" class="ctrLabel">Large</label>
+
+            <p class="ctrTitle">9. Giãn dòng mô tả</p>
+            <input type="radio" name="lineHeightDesc" id="tightDesc" hidden="hidden">
+            <label for="tightDesc" class="ctrLabel">Tight</label>
+            <input type="radio" name="lineHeightDesc" id="normalDesc" hidden="hidden" checked>
+            <label for="normalDesc" class="ctrLabel">Normal</label>
+            <input type="radio" name="lineHeightDesc" id="looseDesc" hidden="hidden">
+            <label for="looseDesc" class="ctrLabel">Looses</label>
+
+            <p class="ctrTitle">10. Màu nút liên hệ</p>
+            <input type="radio" name="btnContactColor" id="btnDark" hidden="hidden" checked>
+            <label for="btnDark" class="ctrLabel">Dark</label>
+            <input type="radio" name="btnContactColor" id="btnBlue" hidden="hidden">
+            <label for="btnBlue" class="ctrLabel">Blue</label>
+            <input type="radio" name="btnContactColor" id="btnLight" hidden="hidden">
+            <label for="btnLight" class="ctrLabel">Light</label>
+
+        </div>
+
+        <div class="previewArea">
+            <p class="preTitle">Preview hồ sơ cá nhân</p>
+            <div class="content">
+                <p class="name">Đoàn Quốc Anh</p>
+                <p class="job">Frontend Developer &middot; Ho Chi Minh City</p>
+                <p class="desc">Tôi là lập trình viên Frontend với hơn 3 năm kinh nghiệm xây dựng giao diện web hiện
+                    đại, tập trung
+                    vào hiệu suất và trải nghiệm người dùng. Tôi yêu thích việc biến ý tưởng sáng tạo thành sản phẩm
+                    thực tế.</p>
+
+                <br>
+                <p>Kỹ năng</p>
+                <span class="tagSkills">HTML5</span>
+                <span class="tagSkills">CSS3</span>
+                <span class="tagSkills">JavaScript</span>
+                <span class="tagSkills">React</span>
+                <span class="tagSkills">Figma</span>
+                <span class="tagSkills">Git</span>
+
+                <br><br>
+                <p>Sở thích</p>
+                <ul class="hobbies">
+                    <li>Nhiếp ảnh</li>
+                    <li>Đọc sách</li>
+                    <li>Du lịch</li>
+                    <li>Cà phê</li>
+                </ul>
+
+                <a href="#" class="btnContact">Liên hệ với tôi</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
