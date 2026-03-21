@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*Chuyển các phần tử này sang inline block để nó nằm thành hàng ngang và có thể padding,margin 4 phía*/
+        .open-btn, .toast {
+            display: inline-block;
+        }
+
+
+        /*Dùng user-select để người dùng khi double click vào text kh bị bôi đen*/
+        .open-btn {
+            color: white;
+            padding: 10px 20px;
+            background-color: #333333;
+            user-select: none;
+            margin-top: 40px;
+        }
+
+        /*dùng display none ở đây để khi vừa mở trình duyệt toast sẽ được ẩn và khi checkbox bỏ check toast sẽ được ẩn lại */
+        .toast {
+            color: white;
+            margin-left: 45px;
+            user-select: none;
+            display: none;
+        }
+
+        .toast div {
+            padding: 13px 23px;
+            background-color: #66c267;
+        }
+
+        .close-btn {
+            padding: 2px 6px;
+            background-color: #4c914d;
+            margin-left: 15px;
+        }
+
+        /*khi checkbox được check sẽ chuyển trạng thái display sang inline block để hiển thị thông báo lên
+        và vì label close-btn cũng liên kết với input này nên khi ấn vào close-btn sẽ bỏ check và trả lại trạng thái display:none để ẩn thông báo đi*/
+        #toast-toggle:checked ~ .toast {
+            display: inline-block;
+        }
+
+        .open-btn + .open-btn {
+            display: none;
+        }
+
+        #toast-toggle:checked + .open-btn {
+            display: none;
+        }
+
+        #toast-toggle:checked + .open-btn + .open-btn {
+            display: inline-block;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!--    btn open-->
+    <input type="checkbox" id="toast-toggle" hidden="hidden">
+    <!--    nút chính để hiện thông báo-->
+    <label for="toast-toggle" class="open-btn">Hiện thông báo</label>
+    <!--    nút phụ để thế chỗ nút chính khi đã hiện thông báo, tác dụng ngăn tắt thông báo khi click vào nút open-btn-->
+    <span class="open-btn">Hiện thông báo</span>
+    <!--    toast-->
+    <div class="toast">
+        <div>Lưu thành công!
+            <!--            btn open-->
+            <label for="toast-toggle" class="close-btn">&#10005;</label>
+        </div>
+    </div>
+</body>
+</html>

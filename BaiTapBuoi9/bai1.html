@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            display: inline-block;
+            text-align: center;
+            margin-left: 50px;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #d15841;
+        }
+
+        .rectangle {
+            width: 200px;
+            height: 100px;
+            border: 2px solid #84b0df;
+        }
+
+        .triangle-up {
+            width: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid #6dc978;
+        }
+
+        .triangle-down {
+            width: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-top: 100px solid #e3a031;
+        }
+
+        .triangle-left {
+            width: 0;
+            border-right: 100px solid #905cb2;
+            border-bottom: 50px solid transparent;
+            border-top: 50px solid transparent;
+        }
+
+        .triangle-right {
+            width: 0;
+            border-left: 100px solid #d48332;
+            border-bottom: 50px solid transparent;
+            border-top: 50px solid transparent;
+        }
+
+        .trapezoid {
+            width: 75px;
+            border-bottom: 60px solid #61b99d;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+        }
+
+        .triangle-wide {
+            width: 0;
+            border-bottom: 50px solid #3a485d;
+            border-left: 90px solid transparent;
+            border-right: 90px solid transparent;
+        }
+
+        .triangle-acute {
+            width: 0;
+            border-bottom: 100px solid #ad4430;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+        }
+
+        .triangle-isosceles {
+            width: 0;
+            border: 50px solid;
+            border-color: transparent transparent #c05c19 transparent;
+        }
+
+        .arrow-right {
+            width: 0;
+            border: 50px solid;
+            border-color: transparent transparent transparent #529e86;
+        }
+
+        .arrow-left {
+            width: 0;
+            border: 50px solid;
+            border-color: transparent #8348a9 transparent transparent;
+        }
+
+        .ribbon {
+            width: 50px;
+            border: 30px solid;
+            border-color: #d15841 transparent #d15841 #d15841;
+        }
+
+        .shape-f {
+            display: inline-block;
+            width: 100px;
+            height: 180px;
+            border-top: 25px solid #d15841;
+            border-left: 25px solid #d15841;
+            vertical-align: top;
+        }
+
+        .shape-f > div {
+            width: 80%;
+            border: 10px solid #d15841;
+            margin-top: 70px;
+        }
+
+        .shape-8 {
+            display: inline-block;
+            width: 90px;
+            height: calc(180px - 25px);
+            border: 25px solid #d15841;
+            margin-left: 30px;
+        }
+
+        .shape-8 > div {
+            width: 80%;
+            border: 10px solid #d15841;
+            margin-top: 70px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="square"></div>
+        <p>1. Hình vuông</p>
+    </div>
+    <div class="box">
+        <div class="rectangle"></div>
+        <p>2. Hình chữ nhật</p>
+    </div>
+    <div class="box">
+        <div class="triangle-up"></div>
+        <p>3. Tam giác lên</p>
+    </div>
+    <div class="box">
+        <div class="triangle-down"></div>
+        <p>4. Tam giác xuống</p>
+    </div>
+    <div class="box">
+        <div class="triangle-left"></div>
+        <p>5. Tam giác trái</p>
+    </div>
+    <div class="box">
+        <div class="triangle-right"></div>
+        <p>6. Tam giác phải</p>
+    </div>
+    <div class="box">
+        <div class="trapezoid"></div>
+        <p>7. Hình thang</p>
+    </div>
+    <div class="box">
+        <div class="triangle-wide"></div>
+        <p>8. Tam giác rộng</p>
+    </div>
+    <div class="box">
+        <div class="triangle-acute"></div>
+        <p>9. Tam giác nhọn</p>
+    </div>
+    <div class="box">
+        <div class="triangle-isosceles"></div>
+        <p>10. Tam giác cân</p>
+    </div>
+    <div class="box">
+        <div class="arrow-right"></div>
+        <p>11. Mũi tên phải</p>
+    </div>
+    <div class="box">
+        <div class="arrow-left"></div>
+        <p>12. Mũi tên trái</p>
+    </div>
+    <div class="box">
+        <div class="ribbon"></div>
+        <p>13. Ribbon/Lá cờ</p>
+    </div>
+    <div class="box">
+        <div class="shape-f8">
+            <div class="shape-f">
+                <div></div>
+            </div>
+            <div class="shape-8">
+                <div></div>
+            </div>
+        </div>
+        <p>14. F8</p>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*dùng userselector:none để khi double click vào text kh bị bôi đen*/
+        * {
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        /*dùng display inline-block để có thể padding margin 4 phía*/
+        .open-btn, .modal {
+            display: inline-block;
+        }
+
+        /*css cho open-btn*/
+        .open-btn {
+            padding: 10px 20px;
+            background-color: #3b82f6;
+            color: #ffffff;
+            margin: 50px 50px;
+        }
+
+        /*tắt nút open phụ khi vừa mở trang*/
+        .open-btn + .open-btn {
+            display: none;
+        }
+
+        /*khi check thì nút open chính sẽ dc ẩn đi và hiện thông báo*/
+        #modal-toggle:checked + .open-btn {
+            display: none;
+        }
+
+        /*cùng lúc khi check nút chính sẽ được ẩn đi thì nút phụ sẽ hiển thị lại thế chỗ của nút chính */
+        /*giúp cho khi click lại nút open lần nữa kh bị tắt thông báo*/
+        #modal-toggle:checked + .open-btn + .open-btn {
+            display: inline-block;
+        }
+
+        /*ẩn overley khi vừa load trang*/
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            height: calc(100vh - 138px);
+            display: none;
+        }
+
+        /*vì modal đang là inline-block value mặc định của  vertical-align là base line nên khi margin -600px kh thể vượt qua được chân chữ nên phải chuyển sang vertical-align: top;*/
+        .modal {
+            display: none;
+            padding: 150px;
+            background-color: #ffffff;
+            margin-top: -65vh;
+            margin-left: 20vw;
+            vertical-align: top;
+        }
+
+        .content {
+            color: #333333;
+        }
+
+        .close-btn {
+            width: fit-content;
+            display: block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ef4444;
+            color: #ffffff;
+        }
+
+        /*khi check orverlay sẽ hiện lên ngược lại sẽ quay về trạng thái set bên trên là display none*/
+        #modal-toggle:checked ~ .overlay {
+            display: block;
+        }
+
+        /*Khi check modal sẽ hiện lên ngược lại sẽ quay về trạng thái set bên trên là display none*/
+        #modal-toggle:checked ~ .overlay ~ .modal {
+            display: inline-block;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <input type="checkbox" id="modal-toggle" hidden="hidden">
+    <!--    button chính khi clik sẽ hiện modal-->
+    <label for="modal-toggle" class="open-btn">Mở modal</label>
+    <!--    nút phụ để khi click button chính sẽ ẩn button chính đi và thay thế bằng button phụ này. Mục dính khi click lại lần-->
+    <!--    nữa sẽ kh tắt modal-->
+    <span class="open-btn">Mở modal</span>
+    <label for="modal-toggle" class="overlay"></label>
+    <div class="modal">
+        <span class="content">Đây là nội dung thông báo!</span>
+        <label for="modal-toggle" class="close-btn">Đóng</label>
+    </div>
+</body>
+</html>
