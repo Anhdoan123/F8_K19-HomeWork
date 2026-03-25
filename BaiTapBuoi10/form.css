@@ -1,0 +1,190 @@
+/*cho font-size là 62.5% để sử dụng rem về sau dễ hơn*/
+html {
+    font-family: Arial, sans-serif;
+    font-size: 62.5%;
+}
+
+/*set lại kích thước theo đề đúng 16px */
+body {
+    font-size: 1.6rem;
+}
+
+/*dùng user-selector để người dùng kh bị bôi đen khi double click*/
+.container {
+    height: 100vh;
+    background-image: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+    position: relative;
+    user-select: none;
+}
+
+
+.overlay {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+}
+
+/*dùng display none ẩn overlay khi chưa ấn nút tư vấn*/
+.container .overlay {
+    display: none;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/*css cho nút tư vấn*/
+.container #btn-consult + label {
+    text-align: center;
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    cursor: pointer;
+    padding: 2rem 6rem;
+    background-color: #f05123;
+    border-radius: 10rem;
+    color: white;
+    font-weight: bold;
+}
+
+.container #btn-consult:hover + label {
+    background-color: #d8431c;
+}
+
+/*khi ấn nút tư vấn sẽ dùng display block để hiển thị lại overlay và modal*/
+.container #btn-consult:checked ~ .overlay {
+    display: block;
+}
+
+.container #btn-consult:checked ~ .modal {
+    display: block;
+}
+
+
+.required {
+    color: #ef4444;
+}
+
+
+.modal {
+    text-align: center;
+    width: 70rem;
+    height: 83rem;
+    position: fixed;
+    background-color: white;
+    inset: 0;
+    margin: auto;
+    padding: 5rem;
+    letter-spacing: 0.07rem;
+    border-radius: 2rem;
+    display: none;
+}
+
+/*điều chỉnh vị trí cho icon close*/
+.modal i {
+    position: absolute;
+    right: 4rem;
+    top: 3rem;
+}
+
+.modal .form-title {
+    font-size: 3.4rem;
+    font-weight: bold;
+    color: #1e293b;
+}
+
+.modal .form-desc {
+    margin-top: 1.2rem;
+    color: #64748b;
+}
+
+.form-content {
+    text-align: left;
+}
+
+/*chuyển label sang block để nó chiếm full width làm cho input xuống hàng như mẫu*/
+.form-content label {
+    margin-top: 3rem;
+    display: block;
+}
+
+/*css cho các ô nhập liệu*/
+#name, #phone, #email {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.7rem;
+    margin-top: 1rem;
+    border-radius: 0.8rem;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+
+/*css cho các ô checkbox*/
+.form-content input[type="checkbox"] {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+
+.form-content input[type="checkbox"] + label {
+    display: inline-block;
+    margin-top: 2rem;
+    margin-left: 1rem;
+}
+
+/*css cho nút đăng ký*/
+button[type="submit"] {
+    border: none;
+    width: 100%;
+    height: 5rem;
+    font-size: 1.8rem;
+    background-color: #a855f7;
+    border-radius: 4rem;
+    color: white;
+    font-weight: bold;
+    margin-top: 3rem;
+}
+
+button[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #9333ea;
+}
+
+/*cho field relative để tooltip có điểm neo vị trí*/
+.field {
+    position: relative;
+}
+
+/*css cho tooltip di chuyển vị trí nó nằm trên label và ẩn tooltip*/
+.tooltip {
+    width: fit-content;
+    padding: 1.2rem 2rem;
+    background-color: #1e293b;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    position: absolute;
+    left: 0;
+    top: -6rem;
+    visibility: hidden;
+}
+
+/*css phần mũi tên của tooltip*/
+.arrow {
+    position: absolute;
+    border: 0.8rem solid;
+    border-color: #1e293b transparent transparent transparent;
+    top: 100%;
+}
+
+/*ghi đè lại vị trí tooltip bên trên vì vị trí tooltip của input text và input checkbox khác nhau*/
+.course ~ .field .tooltip {
+    top: -4rem;
+}
+
+/*khi hover vào các input sẽ hiển thị tooltip*/
+input:hover ~ .tooltip {
+    visibility: visible;
+}
+

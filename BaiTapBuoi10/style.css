@@ -1,0 +1,125 @@
+/*set font cho trang web và sử dụng fontsize 62.5% để sử dụng rem dễ hơn*/
+html {
+    font-family: Arial, sans-serif;
+    font-size: 62.5%;
+}
+
+/*set lại font mặc định 16px cho toàn trang */
+.header {
+    width: 120rem;
+    font-size: 1.6rem;
+    position: relative;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/*căn giữa logo và menu*/
+.logo, .menu {
+    display: inline-block;
+    list-style: none;
+    vertical-align: middle;
+}
+
+/*set kích thước logo*/
+.logo {
+    width: 3.8rem;
+    height: 3.8rem;
+}
+
+i {
+    color: #555555;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+/*cho các li đầu tiên relative để các mục dropdown sau có thể neo theo*/
+.menu > li {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    margin-left: 2.5rem;
+    position: relative;
+}
+
+/*ẩn menu con và chỉnh vị trí*/
+.menu > li > .sub-menu {
+    display: none;
+    position: absolute;
+    top: 3.4rem;
+    left: 0;
+    list-style: none;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    width: 20rem;
+    text-align: left;
+}
+
+/*đổi màu khi chữ khi hover vào menu */
+.menu > li:hover > a {
+    color: #d62828;
+}
+
+.sub-menu > li {
+    position: relative;
+    padding: 0.6rem 1rem;
+}
+
+
+.menu > li > a {
+    font-weight: bold;
+}
+
+.menu > li a {
+    color: #333333;
+    text-decoration: none;
+    font-size: 1.8rem;
+}
+
+/*css border bottom khi hover cho menu */
+.menu > li:hover {
+    border-bottom: 2px solid #d62828;
+}
+
+/*hiển thị menu cấp 1 khi hover */
+.menu > li:hover > .sub-menu {
+    display: block
+}
+
+/*đổi màu chữ cho menu cấp 1 - 2*/
+.menu .sub-menu > li:hover > a {
+    color: #d62828;
+}
+
+.sub-menu > li:hover {
+    background-color: #f5f5f5;
+}
+
+/*hiển thị menu từ cấp 2 trở đi khi hover*/
+.sub-menu li:hover > .sub-menu {
+    display: block;
+}
+
+.sub-menu li i {
+    position: absolute;
+    top: 1.2rem;
+    right: 0.5rem;
+    color: #777777;
+}
+
+/*css cho các menu từ cấp 2 trở đi*/
+.sub-menu .sub-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    list-style: none;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    width: 20rem;
+    text-align: left;
+}
+
+
+
+
