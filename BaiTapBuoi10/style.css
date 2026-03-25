@@ -51,18 +51,12 @@ i {
     list-style: none;
     background-color: #ffffff;
     border: 1px solid #dddddd;
-    width: 25rem;
     text-align: left;
 }
 
 /*đổi màu khi chữ khi hover vào menu */
 .menu > li:hover > a {
     color: #d62828;
-}
-
-.sub-menu > li {
-    position: relative;
-    padding: 0.6rem 1rem;
 }
 
 /*căn giữa a và icon*/
@@ -90,6 +84,16 @@ i {
 /*đổi màu chữ cho menu cấp 1 - 2*/
 .menu .sub-menu > li:hover > a {
     color: #d62828;
+}
+
+.sub-menu > li {
+    position: relative;
+}
+
+.sub-menu li a {
+    width: 25rem;
+    padding: 0.6rem 1rem;
+    display: inline-block;
 }
 
 .sub-menu > li:hover {
