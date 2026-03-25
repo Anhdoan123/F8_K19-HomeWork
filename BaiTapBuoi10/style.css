@@ -65,9 +65,10 @@ i {
     padding: 0.6rem 1rem;
 }
 
-
+/*căn giữa a và icon*/
 .menu > li > a {
     font-weight: bold;
+    vertical-align: middle;
 }
 
 .menu > li a {
