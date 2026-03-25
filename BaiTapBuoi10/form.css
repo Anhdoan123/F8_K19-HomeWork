@@ -86,6 +86,7 @@ body {
     position: absolute;
     right: 4rem;
     top: 3rem;
+    cursor: pointer;
 }
 
 .modal .form-title {
