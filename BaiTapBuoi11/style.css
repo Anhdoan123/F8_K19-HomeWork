@@ -1,7 +1,7 @@
 .container {
     width: 600px;
     height: 200px;
-    border: 2px solid red;
+    border: 1px solid red;
 }
 
 p {
