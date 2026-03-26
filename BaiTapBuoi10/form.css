@@ -189,3 +189,7 @@ input:hover ~ .tooltip {
     visibility: visible;
 }
 
+input:hover {
+    border-color: #a855f7 !important;
+}
+
