@@ -1,0 +1,250 @@
+/*set font chữ và màu nền cho toàn trang*/
+body {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #f8f9fa;
+    user-select: none;
+}
+
+/*chỉnh lại chiều rộng của container để vừa 3 card, giúp khi màn hình rộng hay nhỏ hơn vẫn giữ dc 3 cột 2 hàng*/
+.container {
+    width: calc(350px * 3 + 50px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 30px auto;
+}
+
+.title h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: center;
+    line-height: 2.5;
+}
+
+.title p {
+    line-height: 1.6;
+    font-size: 15px;
+    color: #7f8c8d;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/*dùng overflow hidden để khi hình tràn ra ngoài làm mất border radius của card, sẽ bị ẩn đi giúp có thể hiển thị border radius bình thường*/
+.card {
+    width: 350px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+/*hiệu ứng hover cho card*/
+.card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15)
+}
+
+.card .card-img {
+    height: 200px;
+    position: relative;
+}
+
+/*object-fit cover để chỉnh hình vừa với khung card kh bị bóp méo*/
+.card .card-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/*css cho badge-sale và badge-rent và điều chỉnh vị trí*/
+.badge-sale, .badge-rent {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #e74c3c;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.badge-rent {
+    background-color: #e67e22;
+}
+
+
+/*css cho icon-flash và điều chỉnh vị trí*/
+.icon-flash {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #2c3e50;
+    color: #ffffff;
+    position: absolute;
+    top: 11px;
+    left: 100px;
+}
+
+/*css cho badge-type và điều chỉnh vị trí*/
+.badge-type {
+    padding: 6px 16px;
+    border-radius: 20px;
+    background-color: #34495e;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+/*css cho badge-price và điều chỉnh vị trí*/
+.badge-price {
+    padding: 8px 20px;
+    border-radius: 20px;
+    background-color: #16a085;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+/*hiệu ứng đổ bóng khi hover cho price*/
+.badge-price:hover {
+    box-shadow: 0 4px 12px rgba(22, 160, 133, 0.4)
+}
+
+/*css cho .icon-share, .icon-heart và điều chỉnh vị trí*/
+.icon-share, .icon-heart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    color: #7f8c8d;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 15px;
+    right: 65px;
+}
+
+/*hiệu ứng khi hover cho icon share*/
+.icon-share:hover {
+    background-color: #3498db;
+    color: #ffffff;
+}
+
+/*hiệu ứng hover cho icon heart*/
+.icon-heart.mdi.mdi-heart-outline, .icon-heart.mdi.mdi-heart {
+    color: #e74c3c;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1;
+}
+
+.icon-heart.mdi.mdi-heart {
+    color: #ffffff;
+    z-index: 0;
+    background-color: #e74c3c;
+}
+
+.icon-heart.mdi.mdi-heart-outline:hover {
+    opacity: 0;
+}
+
+.card-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.icon-marker {
+    color: #95a5a6;
+}
+
+.icon-marker + span {
+    font-size: 12px;
+    color: #95a5a6;
+}
+
+.card-body-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.agent-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #bdc3c7;
+    color: #ffffff;
+}
+
+.icon-avatar + span {
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-left: 5px;
+}
+
+.post-date {
+    display: flex;
+    align-items: center;
+}
+
+.icon-calender {
+    color: #95a5a6;
+    margin-right: 5px;
+}
+
+.icon-calender + span {
+    font-size: 12px;
+    color: #95a5a6;
+}
+
+.details {
+    padding-top: 15px;
+    border-top: 1px solid #ecf0f1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.detail-icon {
+    color: #95a5a6;
+}
+
+.detail-icon + span {
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-left: 8px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+}
+
