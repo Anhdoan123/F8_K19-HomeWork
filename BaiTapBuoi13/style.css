@@ -1,0 +1,81 @@
+/*căn ngang các strip*/
+.container {
+    height: 100vh;
+    display: flex;
+}
+
+/*chỉnh font kích thước màu chữ tiêu đề và căn giữa tiêu đề, set kích thước cho các strip*/
+/*dùng overflow để kh tràn nội dung bên trong*/
+.strip {
+    position: relative;
+    font-family: Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    width: 20%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/*cho position absolute để hình có thể đè lên tiêu đề, chỉnh kích thước hình cho full với khung strip */
+/*dùng object-fit cover để kh méo hình*/
+.strip img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*chỉnh màu background cho các strip*/
+.strip:nth-of-type(1) {
+    background: forestgreen;
+}
+
+
+.strip:nth-of-type(2) {
+    background: khaki;
+}
+
+.strip:nth-of-type(3) {
+    background: dodgerblue;
+}
+
+.strip:nth-of-type(4) {
+    background: orange;
+}
+
+.strip:nth-of-type(5) {
+    background: violet;
+}
+
+.strip:hover {
+    width: 100%;
+}
+
+/*cho overlay bao phủ toàn bộ strip và chỉnh màu và opacity*/
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/*ẩn img và overlay khi chưa hover*/
+.strip img, .strip .overlay {
+    display: none;
+}
+
+/*hiển thị lại img và overlay khi hover*/
+.strip:hover img, .strip:hover .overlay {
+    display: block;
+}
+
+
+
+
+
