@@ -1,0 +1,245 @@
+/*đặt biến các màu chính sử dụng nhiều của trang*/
+:root {
+    --primary-color: #3a3a3a;
+    --text-color: #877b83;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #e8e8e8;
+}
+
+/*chỉnh hiệu ứng và vị trí cho overlay*/
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition-property: opacity, visibility;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    z-index: 998;
+    cursor: pointer;
+}
+
+
+/*----header----*/
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    align-items: center;
+    padding: 1.6rem 3.2rem;
+}
+
+.header .header__logo {
+    font-size: 1.8rem;
+    color: white;
+    font-style: italic;
+    text-decoration: none;
+    z-index: 1001;
+    font-weight: bold;
+}
+
+header .header__hamburger {
+    font-size: 28px;
+    display: none;
+    color: white;
+    cursor: pointer;
+}
+
+.header__nav-link {
+    text-decoration: none;
+    color: white;
+    margin-right: 1.6rem;
+}
+
+
+.btn-close {
+    display: none;
+}
+
+/*----container----*/
+.container {
+    padding: 2.4rem;
+    gap: 2.4rem;
+    display: flex;
+    align-items: stretch;
+}
+
+.container__content {
+    flex: 1;
+}
+
+/*title*/
+.title h1 {
+    font-size: 3.2rem;
+    margin-bottom: 12px;
+}
+
+.title p {
+    color: var(--text-color);
+    line-height: 2rem;
+    margin-bottom: 12px;
+}
+
+/*sidebar*/
+.container__sidebar {
+    width: 300px;
+    background-color: var(--primary-color);
+    padding: 12px 12px;
+    color: white;
+
+}
+
+/*card*/
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+}
+
+.card {
+    height: 200px;
+    width: calc((100% - 3.2rem) / 3);
+    border: 3px solid var(--primary-color);
+    overflow: hidden;
+}
+
+.card__header {
+    font-size: 2rem;
+    color: white;
+    background-color: var(--primary-color);
+    padding: 1.6rem 1.6rem;
+}
+
+.card__body {
+    padding: 1.6rem;
+    color: var(--text-color);
+}
+
+/*----responsive----*/
+/*desktop*/
+@media (width > 768px) {
+    .container {
+        max-width: 1320px;
+        margin: 0 auto;
+    }
+}
+
+/*tablet*/
+@media (width <= 768px) {
+    .container {
+        padding: 1.6rem;
+    }
+
+    .header {
+        padding: 1.6rem;
+    }
+
+    header .header__hamburger {
+        display: block;
+    }
+
+    .header__nav {
+        width: 300px;
+        top: 0;
+        bottom: 0;
+        right: -300px;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+        padding: 3.2rem;
+        opacity: 0;
+        visibility: hidden;
+        transition-property: right, opacity, visibility;
+        transition-duration: 0.3s;
+        transition-timing-function: ease;
+        z-index: 1000;
+    }
+
+    .header__nav .btn-close {
+        color: white;
+        font-size: 28px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        padding: 5px;
+        cursor: pointer;
+        display: block;
+        transition-duration: 0.3s;
+    }
+
+    .btn-close:hover {
+        transform: rotate(90deg);
+    }
+
+
+    .header__nav-link {
+        display: inline-block;
+        color: white;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1.6rem;
+        cursor: pointer;
+    }
+
+    .header__nav-link:nth-of-type(1) {
+        margin-top: 30px;
+    }
+
+    .container__sidebar {
+        width: 250px;
+    }
+
+    #menu-toggle:checked ~ .header .header__nav {
+        right: 0;
+        opacity: 1;
+        visibility: visible;
+
+    }
+
+    #menu-toggle:checked ~ .overlay {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .card {
+        height: 200px;
+        width: calc((100% - 1.6rem) / 2);
+    }
+}
+
+/*mobile*/
+@media (width <= 480px) {
+    .title h1 {
+        font-size: 2.4rem;
+        margin-bottom: 12px;
+    }
+
+    .container {
+        padding: 1rem;
+        flex-direction: column;
+    }
+
+    .container__sidebar {
+        width: 100%;
+    }
+
+    .header__nav {
+        width: 280px;
+        right: -280px;
+        padding: 3.2rem 2.4rem;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
