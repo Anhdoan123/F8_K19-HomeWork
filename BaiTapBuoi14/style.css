@@ -35,7 +35,7 @@ body {
     justify-content: space-between;
     background-color: var(--primary-color);
     align-items: center;
-    padding: 1.6rem 3.2rem;
+    padding: 1rem 2rem;
 }
 
 .header .header__logo {
@@ -57,7 +57,7 @@ header .header__hamburger {
 .header__nav-link {
     text-decoration: none;
     color: white;
-    margin-right: 1.6rem;
+    margin-right: 1rem;
 }
 
 
@@ -67,8 +67,8 @@ header .header__hamburger {
 
 /*----container----*/
 .container {
-    padding: 2.4rem;
-    gap: 2.4rem;
+    padding: 1.5rem;
+    gap: 1.5rem;
     display: flex;
     align-items: stretch;
 }
@@ -79,7 +79,7 @@ header .header__hamburger {
 
 /*title*/
 .title h1 {
-    font-size: 3.2rem;
+    font-size: 2rem;
     margin-bottom: 12px;
 }
 
@@ -95,7 +95,7 @@ header .header__hamburger {
     background-color: var(--primary-color);
     padding: 12px 12px;
     color: white;
-
+    min-height: 400px;
 }
 
 /*card*/
@@ -106,14 +106,14 @@ header .header__hamburger {
 }
 
 .card {
-    height: 200px;
+    min-height: 200px;
     width: calc((100% - 3.2rem) / 3);
     border: 3px solid var(--primary-color);
     overflow: hidden;
 }
 
 .card__header {
-    font-size: 2rem;
+    font-size: 1.25rem;
     color: white;
     background-color: var(--primary-color);
     padding: 1.6rem 1.6rem;
@@ -128,7 +128,7 @@ header .header__hamburger {
 /*desktop*/
 @media (width > 768px) {
     .container {
-        max-width: 1320px;
+        max-width: 1400px;
         margin: 0 auto;
     }
 }
@@ -136,11 +136,11 @@ header .header__hamburger {
 /*tablet*/
 @media (width <= 768px) {
     .container {
-        padding: 1.6rem;
+        padding: 1rem;
     }
 
     .header {
-        padding: 1.6rem;
+        padding: 1rem;
     }
 
     header .header__hamburger {
@@ -220,12 +220,11 @@ header .header__hamburger {
 /*mobile*/
 @media (width <= 480px) {
     .title h1 {
-        font-size: 2.4rem;
+        font-size: 1.5rem;
         margin-bottom: 12px;
     }
 
     .container {
-        padding: 1rem;
         flex-direction: column;
     }
 
