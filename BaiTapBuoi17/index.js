@@ -14,7 +14,7 @@ function getElectricityBill(kwh) {
     const lv4 = 2536;
     const lv5 = 2834;
     const lv6 = 2927;
-
+    
     let total = 0;
 
     if (kwh <= 50) {
