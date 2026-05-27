@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body class=" p-16 max-w-[900px] m-auto">
+    <div class="flex justify-between items-center">
+        <div>
+            <div class="flex gap-3 items-center">
+                <img src="wnlogo.jpg" alt="logo" class="size-7 rounded-sm">
+                <h1 class="font-bold text-2xl">WinMark 2 Hai Bà Trưng</h1>
+            </div>
+            <p class="text-[var(--text-color)]">Cung cấp sản phẩm thời trang cao cấp & thiết kế độc quyền</p>
+
+        </div>
+
+        <div>
+            <p class="ml-12 text-[#47917F] font-medium px-4 bg-[#E8FEF6] text-center rounded-xl inline-block text-sm">
+                Hoá đơn
+                bán
+                lẻ</p>
+            <p>Mã số: <span id="invoice-number" class="text-[var(--text-color)]"></span></p>
+            <p>Ngày bán: <span id="sale-date" class="text-[var(--text-color)]"></span></p>
+        </div>
+    </div>
+    <div class="grid grid-cols-2 gap-10 mt-10">
+        <div id="left">
+            <h2 class="text-[var(--text-color)]">ĐƠN VỊ BÁN HÀNG (SELLER)</h2>
+        </div>
+        <div id="right">
+            <h2 class="text-[var(--text-color)]">KHÁCH HÀNG (BUYER)</h2>
+        </div>
+    </div>
+
+    <table class="w-full text-center my-10">
+        <thead class=" text-gray-400 text-sm border-b">
+            <tr>
+                <th class="py-4">STT</th>
+                <th>TÊN SẢN PHẨM</th>
+                <th>SIZE</th>
+                <th>SL</th>
+                <th>ĐƠN GIÁ</th>
+                <th>THÀNH TIỀN</th>
+            </tr>
+        </thead>
+
+        <tbody></tbody>
+    </table>
+
+    <div class="grid grid-cols-5 space-x-8 items-start">
+        <div class="flex bg-[#d0fce3] col-span-3 items-center py-4 rounded-xl border border-[#F0F9F8]">
+            <i class="fa-solid fa-square-check text-[#069269] mx-2 text-xl"></i>
+            <div class="text-sm">
+                <p class="font-bold text-[#069269]">KHUYẾN MÃI / TRỢ GIÁ</p>
+                <p class="text-gray-600 font-medium">Khuyến mãi 50% dành cho khách hàng thân thiết</p>
+            </div>
+        </div>
+        <div class="col-span-2">
+            <p class="font-medium">Tổng cộng: <span id="total-price"></span></p>
+            <p class="font-medium py-4 border-b border-gray-300">Giảm giá: <span id="discount-price"></span></p>
+            <p class="text-lg font-medium">Tổng thanh toán: <span id="final-price"></span></p>
+        </div>
+    </div>
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
