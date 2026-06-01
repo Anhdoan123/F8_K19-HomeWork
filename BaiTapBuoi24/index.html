@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <header class="sticky top-0 z-10">
+        <div class="flex items-center justify-around bg-white h-16 border-b border-gray-300">
+            <!-- logo -->
+            <a href="" class="text-[#5E4CE4] text-xl font-semibold flex items-center">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>FakeStore</span>
+            </a>
+
+            <!-- search -->
+            <div class="flex items-center max-w-xl flex-1 border text-gray-400 text-sm px-3 py-1 rounded-2xl">
+                <i class="fa-solid fa-magnifying-glass pr-5"></i>
+                <input type="text" class="outline-none font-medium w-full" placeholder="Tìm kiếm sản phẩm...">
+            </div>
+
+            <div class="relative">
+                <div
+                    class="min-w-4 h-4 flex items-center justify-center absolute bg-red-500 text-[8px] rounded-full text-white right-[-10px] top-[-10px] px-2 font-bold border-2 border-white">
+                    <span class="quality-product">0</span>
+                </div>
+                <i class="fa-solid fa-cart-plus text-lg text-gray-400"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-[1980px] mx-auto py-6 px-44 flex gap-6 items-start select-none">
+        <!-- categories -->
+        <div class="bg-white min-w-52 w-120 p-4 rounded-xl">
+            <!-- title -->
+            <div class="flex items-center border-b border-gray-300 pb-3 mb-3">
+                <i class="fa-solid fa-filter text-gray-400"></i>
+                <span class="ml-2 font-medium">Danh mục</span>
+            </div>
+            <!-- content -->
+            <div class="categories">
+                <p
+                    class="category-item active hover:bg-[#EDF2FF] hover:text-[#7670D9] hover:rounded-xl px-4 py-2 text-sm mb-1">
+                    Tất cả sản phẩm
+                </p>
+                <!-- item -->
+            </div>
+        </div>
+
+        <div>
+            <p class="font-bold text-xl">Tất cả sản phẩm</p>
+            <p class="text-sm text-gray-400 mb-4">Hiển thị 20 sản phẩm</p>
+
+            <!-- product list -->
+            <div class="card-item grid grid-cols-3 gap-6">
+                <!-- card -->
+            </div>
+        </div>
+    </main>
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
