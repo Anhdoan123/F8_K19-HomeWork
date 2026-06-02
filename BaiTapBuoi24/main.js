@@ -57,12 +57,16 @@ const getCategoryCounts = (products) => {
     return categoryCounts
 }
 
+let currentCategory = ''
+let currentKeyword = ''
 
 const renderCategoryList = (products) => {
     const categoryCounts = getCategoryCounts(products)
     document.querySelector(".categories").innerHTML += Object.entries(categoryCounts).map(product => renderCategory(product)).join("")
 
 }
+
+
 
 const categoryEvent = (products) => {
     const selectedCategory = document.querySelectorAll('.category-item')
@@ -73,10 +77,13 @@ const categoryEvent = (products) => {
             })
             p.classList.add('active')
             const categoryName = p.querySelector('p') ? p.querySelector('p').textContent : ''
-            renderProductList(products, categoryName)
+            currentCategory = categoryName
+            renderProductList(products)
         })
     })
 }
+
+
 
 const handleAddToCart = () => {
     let count = 0
@@ -94,27 +101,40 @@ const handleAddToCart = () => {
 }
 
 
+const filterProducts = (products) => {
+    return products.filter(product => {
+        const matchCategory =
+            !currentCategory ||
+            product.category === currentCategory
 
+        const matchKeyword =
+            !currentKeyword ||
+            product.title?.toLowerCase().includes(currentKeyword.toLowerCase())
 
-const filterProducts = (products, key) => {
-    const filter = products.filter(p => p.category === key)
-    return filter
+        return matchCategory && matchKeyword
+    })
 }
 
-const renderProductList = (products, key) => {
-    if (!key) {
-        document.querySelector(".card-item").innerHTML = products.map(product => renderProductCard(product)).join("")
-    }
-    else {
-        const selectedCategory = filterProducts(products, key)
-        document.querySelector(".card-item").innerHTML = selectedCategory.map(product => renderProductCard(product)).join("")
-    }
+const searchEvent = (products) => {
+    const searchEl = document.querySelector('.search')
+    searchEl.addEventListener('input', (e) => {
+        currentKeyword = e.target.value
+        renderProductList(products)
+    })
+}
+
+const renderProductList = (products) => {
+    const selectedCategory = filterProducts(products)
+    document.querySelector(".card-item").innerHTML = selectedCategory.map(product => renderProductCard(product)).join("")
+
 }
 
 
 const init = async () => {
     const products = await getProducts()
+
     renderCategoryList(products)
+    searchEvent(products)
     categoryEvent(products)
     renderProductList(products)
     handleAddToCart()
